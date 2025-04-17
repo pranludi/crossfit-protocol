@@ -20,14 +20,28 @@ message SignUpRequest {
   MemberGradeDTO grade = 5;
 }
 
+message MemberResult {
+  MemberDTO member = 3;
+}
+
+enum ResultCode {
+  NONE = 0;
+  SUCCESS = 1;
+  FAILURE = 2;
+  CIRCUIT_BREAKER = 3;
+}
+
 message SignUpResponse {
-  MemberDTO member = 1;
+  ResultCode code = 1;
+  string message = 2;
+  MemberResult result = 3;
 }
 
 message GetMemberRequest {
 }
 
 message GetMemberResponse {
-  MemberDTO member = 1;
+  ResultCode code = 1;
+  string message = 2;
+  MemberResult result = 3;
 }
-
