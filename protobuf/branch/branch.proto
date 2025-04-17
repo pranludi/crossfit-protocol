@@ -39,10 +39,10 @@ message AllBranchesRequest {
 }
 
 message AllBranchesResponse {
-  message BranchResult {
+  message BranchesResult {
     repeated BranchDTO branches = 1;
   }
   ResultCode code = 1;
   string message = 2;
-  BranchResult result = 3;
+  BranchesResult result = 3;
 }
