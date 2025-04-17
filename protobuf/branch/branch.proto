@@ -21,20 +21,28 @@ message SaveBranchRequest {
 }
 
 message SaveBranchResponse {
-  BranchDTO branch = 1;
+  ResultCode code = 1;
+  string message = 2;
+  BranchResult result = 3;
 }
 
 message GetBranchRequest {
 }
 
 message GetBranchResponse {
-  BranchDTO branch = 1;
+  ResultCode code = 1;
+  string message = 2;
+  BranchResult result = 3;
 }
 
 message AllBranchesRequest {
 }
 
 message AllBranchesResponse {
-  repeated BranchDTO branches = 1;
+  message BranchResult {
+    repeated BranchDTO branches = 1;
+  }
+  ResultCode code = 1;
+  string message = 2;
+  BranchResult result = 3;
 }
-

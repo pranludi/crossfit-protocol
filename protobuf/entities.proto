@@ -18,9 +18,8 @@ message MemberDTO {
 }
 
 enum MemberGradeDTO {
-  NONE = 0;
-  NORMAL = 1;
-  COACH = 2;
+  NORMAL = 0;
+  COACH = 1;
 }
 
 message BranchDTO {
@@ -31,3 +30,16 @@ message BranchDTO {
   string phone_number = 5;
 }
 
+message MemberResult {
+  MemberDTO member = 1;
+}
+
+message BranchResult {
+  BranchDTO branch = 1;
+}
+
+enum ResultCode {
+  SUCCESS = 0;
+  FAILURE = 1;
+  CIRCUIT_BREAKER = 2;
+}
